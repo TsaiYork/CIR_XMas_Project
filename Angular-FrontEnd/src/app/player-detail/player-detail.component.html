@@ -1,0 +1,11 @@
+<app-players></app-players>>
+<div *ngIf="player">
+  <h2>{{player.PlayerName | uppercase}} Details</h2>
+  <div><span>id: </span>{{player.Id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="player.PlayerName" placeholder="name">
+      </label>
+  </div>
+</div>
+

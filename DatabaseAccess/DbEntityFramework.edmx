@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="XMas_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RandomCode" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="PlayerName" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Desire" Type="varchar" MaxLength="40" />
+          <Property Name="Tip1" Type="varchar" MaxLength="100" />
+          <Property Name="Tip2" Type="varchar" MaxLength="100" />
+          <Property Name="Tip3" Type="varchar" MaxLength="100" />
+          <Property Name="Apply" Type="bit" Nullable="false" />
+          <Property Name="Draw" Type="bit" Nullable="false" />
+          <Property Name="Receiver" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="XMas_DatabaseModelStoreContainer">
+          <EntitySet Name="Info" EntityType="Self.Info" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XMas_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RandomCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PlayerName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Desire" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Tip1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tip2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tip3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apply" Type="Boolean" Nullable="false" />
+          <Property Name="Draw" Type="Boolean" Nullable="false" />
+          <Property Name="Receiver" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="XMas_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Info" EntityType="Self.Info" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XMas_DatabaseModelStoreContainer" CdmEntityContainer="XMas_DatabaseEntities">
+          <EntitySetMapping Name="Info">
+            <EntityTypeMapping TypeName="XMas_DatabaseModel.Info">
+              <MappingFragment StoreEntitySet="Info">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RandomCode" ColumnName="RandomCode" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="Desire" ColumnName="Desire" />
+                <ScalarProperty Name="Tip1" ColumnName="Tip1" />
+                <ScalarProperty Name="Tip2" ColumnName="Tip2" />
+                <ScalarProperty Name="Tip3" ColumnName="Tip3" />
+                <ScalarProperty Name="Apply" ColumnName="Apply" />
+                <ScalarProperty Name="Draw" ColumnName="Draw" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
